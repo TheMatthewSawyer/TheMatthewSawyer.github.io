@@ -2,3 +2,9 @@ P {
     background-color: black;
     color: white;
 }
+
+h1{
+    font-size: 400%;
+    color: pink;
+    background-color: green;
+}
