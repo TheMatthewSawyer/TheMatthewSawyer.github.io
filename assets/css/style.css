@@ -1,0 +1,108 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url("../images/background.png");
+    /*This pattern is downloaded from www.subtlepatterns.com*/
+    background-repeat: repeat;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 20px;
+    color: #777777;
+}
+
+#header {
+    position: fixed;
+    background-color: #ffffff;
+    border-bottom: 2px solid #cccccc;
+    height: 100px;
+    top:0;
+    width: 100%;
+    z-index: 1;
+}
+
+#container {
+    min-height: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: -5px;
+}
+
+#main {
+    position: relative;
+    background-color: #ffffff;
+    border: 2px solid #dddddd;
+    margin-top: 150px;
+}
+
+#footer {
+    border-top: 8px solid #4aaaa5;
+    background-color: #666666;
+    position: sticky;
+    bottom: 0;
+    height: 100px;
+}
+
+/*My name*/
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    color: white;
+    background-color: #4aaaa5;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*Section label*/
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #4aaaa5;
+    font-size: 30px;
+    margin: 25px;
+    font-weight: bold;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #cccccc;
+}
+
+/*Links around site*/
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    float: right;
+    text-align: center;
+}
+
+P {
+    margin: 25px;
+    line-height: 30px;
+    padding-top: 20px;
+}
+
+img {
+    width: 352.8px;
+    height: 363px;
+    float: left;
+    margin: 25px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #777777;
+}
+a:visited {
+    color: #777777;
+}
+a:hover {
+    color: #4aaaa5;
+}
+a:active {
+    color: #4aaaa5;
+}
