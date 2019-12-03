@@ -13,21 +13,30 @@ body {
     color: #777777;
 }
 
-#header {
+#header-back {
     position: fixed;
     background-color: #ffffff;
     border-bottom: 2px solid #cccccc;
     height: 100px;
     top:0;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
+}
+
+#header {
+    position: fixed;
+    height: 100px;
+    top:0;
+    width: 960px;
+    z-index: 5;
 }
 
 #container {
     min-height: 100%;
     max-width: 960px;
     margin: 0 auto;
-    margin-bottom: -5px;
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 
 #main {
@@ -43,6 +52,7 @@ body {
     position: sticky;
     bottom: 0;
     height: 100px;
+    z-index: 5;
 }
 
 /*My name*/
@@ -110,11 +120,37 @@ a:active {
 }
 
 /*This is for portfolio.html*/
+#portfolio {
+    margin-bottom: -100px;
+}
+
+.imgContainer {
+    position: relative;
+    float: left;
+}
+
+.text-block {
+    position: absolute;
+    z-index: 1;
+    bottom: 45px;
+    right: 32px;
+    background-color: #4aaaa5;
+    color: white;
+    width: 79.5%;
+    padding: 20px 0px;
+    text-align: center;
+}
+
 .portfolioImg {
     height: 250px;
     width: 250px;
     margin: 30px 32px;
-    
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /*This is for contact.html*/
