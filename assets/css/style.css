@@ -120,10 +120,6 @@ a:active {
 }
 
 /*This is for portfolio.html*/
-#portfolio {
-    margin-bottom: -100px;
-}
-
 .imgContainer {
     position: relative;
     float: left;
