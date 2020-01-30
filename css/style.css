@@ -1,0 +1,119 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* overflow: hidden; */
+    color: white;
+    background-color: black;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.btn {
+    position: relative;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    box-shadow: none;
+    top: 69px;
+    font-size: 20px;
+    animation: 2s fadeIn;
+    width: 100%;
+    font-size: 1.65vw;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    0%{opacity: 0;}75%{opacity: 0;}100%{opacity: 1;}
+}
+
+.imgBtn {
+    border-radius: 20px;
+    transition: all 200ms;
+}
+
+#aboutImg {
+    animation: ease-out 1.5s slideInL;
+}
+
+#portImg {
+    animation: ease-out 1.5s slideUp;
+}
+
+#conImg {
+    animation: ease-out 1.5s slideInR;
+}
+
+@keyframes slideUp {
+    0% {transform: translatey(300%);}
+    100% {transform: translatey(0);}
+}
+
+@keyframes slideInL {
+    0% {transform: translatex(-200%);}
+    100% {transform: translatex(0);}
+}
+
+@keyframes slideInR {
+    0% {transform: translatex(200%);}
+    100% {transform: translatex(0);}
+}
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        top: 0;
+        border-radius: 0;
+        font-size: 4vw;
+    }
+}
+
+@media only screen and (min-width: 1919px) {
+    .btn {
+        font-size: 32px;
+    }
+}
+
+#aboutSection {
+    margin-top: 10px;
+    opacity: 0;
+    transition: all 200ms;
+}
+
+#newHeader {
+    opacity: 0;
+    transition: all 500ms;
+    margin: -5px;
+    height: 1px;
+    cursor: pointer;
+}
+
+.topWords {
+    transition: all 500ms;
+}
+
+.imgCtn {
+    transition: all 500ms;
+}
+
+.container {
+    height: 10000px;
+}
+
+p {
+    transition: all 500ms;
+}
+
+div.topBar {
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    width: 100%;
+}
