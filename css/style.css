@@ -1,6 +1,5 @@
 body {
     font-family: 'Roboto', sans-serif;
-    /* overflow: hidden; */
     color: white;
     background-color: black;
 }
@@ -18,14 +17,12 @@ h2 {
 }
 
 .btn {
-    position: relative;
     background-color: hsla(0, 0%, 0%, 0.5);
     box-shadow: none;
     top: 69px;
-    font-size: 20px;
+    font-size: 15px;
     animation: 2s fadeIn;
     width: 100%;
-    font-size: 1.65vw;
     border-radius: 10px;
 }
 
@@ -36,6 +33,7 @@ h2 {
 .imgBtn {
     border-radius: 20px;
     transition: all 200ms;
+    z-index: 2;
 }
 
 #aboutImg {
@@ -68,7 +66,7 @@ h2 {
 @media only screen and (max-width: 600px) {
     .btn {
         top: 0;
-        border-radius: 0;
+        border-radius: 10px;
         font-size: 4vw;
     }
 }
@@ -80,9 +78,10 @@ h2 {
 }
 
 #aboutSection {
-    margin-top: 10px;
+    margin-top: 400px;
     opacity: 0;
     transition: all 200ms;
+    z-index: 1;
 }
 
 #newHeader {
@@ -107,13 +106,48 @@ h2 {
 
 p {
     transition: all 500ms;
+    z-index: 1;
 }
 
 div.topBar {
-    position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 nav {
     width: 100%;
+    border-radius: 10px;
 }
+
+#portfolioSection {
+    position: fixed;
+    bottom: -100px;
+    margin: 0;
+    width: 84%;
+}
+
+.portItem {
+    background-color: green;
+    height: 100px;
+}
+
+.aboutIcon, .portIcon, .conIcon {
+    position: relative;
+    right: 30px;
+    bottom: 10px;
+    margin-bottom: -55px;
+    transition: all 200ms;
+}
+
+.aboutTxt, .portTxt, .conTxt {
+    position: relative;
+    left: 15px;
+    transition: all 200ms;
+}
+
+.portIcon {right: 45px;}
+
+.portTxt {left: 15px;}
+
+.conIcon {right: 40px;}
+
+.conTxt {left: 15px;}
