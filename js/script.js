@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function goToAbout() {
-        
         window.scrollTo(0, 50);
         scroll();
         window.scrollTo(0, 150);
@@ -156,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(window.pageYOffset < 250 && window.pageYOffset >= 150){
                 allImgBtns[2].style.opacity = '0';
                 allImgBtns[1].style.opacity = '0';
-                // var timer = new Date().getTime();
                 allImgBtns[2].style.display = 'none';
                 allImgBtns[1].style.display = 'none';
             }
