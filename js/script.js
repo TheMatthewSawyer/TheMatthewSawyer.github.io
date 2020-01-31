@@ -135,9 +135,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function goToAbout() {
+        
         window.scrollTo(0, 50);
         scroll();
-        window.scrollTo(0, 100);
+        window.scrollTo(0, 150);
+        scroll();
+        window.scrollTo(0, 250);
+        scroll();
+        window.scrollTo(0, 350);
+        scroll();
+        window.scrollTo(0, 380);
         scroll();
         return;
     }
@@ -149,13 +156,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if(window.pageYOffset < 250 && window.pageYOffset >= 150){
                 allImgBtns[2].style.opacity = '0';
                 allImgBtns[1].style.opacity = '0';
+                // var timer = new Date().getTime();
+                allImgBtns[2].style.display = 'none';
+                allImgBtns[1].style.display = 'none';
             }
             
+            //  SCROLL FROM 50 TO 150
             if(window.pageYOffset < 150 && window.pageYOffset >= 50 ){
                 topBar[0].style.position = 'fixed';
-                topBar[0].style.width = '84%';
                 topBar[0].style.top = '0px';
-                topBar[0].style.left = '8%';
+                if(window.innerWidth > 993) {
+                    topBar[0].style.width = '70vw';
+                } else if (window.innerWidth >= 601) {
+                    topBar[0].style.width = '85vw';
+                } else {
+                    topBar[0].style.width = '90vw';
+                }
                 aboutSection.style.opacity = '1';
                 allBtns[2].style.top = '0px';
                 allBtns[1].style.top = '0px';
@@ -170,28 +186,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 imgCtn[2].style.transform = 'scale(0.8)';
                 imgCtn[1].style.transform = 'scale(0.8)';
                 imgCtn[0].style.transform = 'scale(1.1)';
-                if(window.innerWidth < 600) {
-                    allBtns[2].style.top = '0px';
-                    allBtns[1].style.top = '0px';
-                    allBtns[0].style.top = '69px';
+                if(window.innerWidth <= 600) {
+                    allBtns[0].style.backgroundColor = 'teal';
                     for(i=0; i<3; i++){
                         allBtns[i].style.fontSize = '3.5vw';
                         allImgBtns[i].style.display = 'none';
+                        allBtns[i].style.top = '0px';
+                        allBtns[i].children[1].style.opacity = '0';
+                        allBtns[i].children[0].style.right = '0';
                     }
+
                 } else {
+                    allBtns[0].style.top = '69px';
+                    allBtns[0].style.backgroundColor = '';
                     allImgBtns[0].style.display = '';
                     for(i=0; i<3; i++){
                         allBtns[i].style.fontSize = '15px';
+                        allBtns[i].children[1].style.opacity = '1';
                     }
+                    allBtns[0].style.top = '69px';
+                    allBtns[0].children[0].style.right = '30px';
+                    allBtns[1].children[0].style.right = '45px';
+                    allBtns[2].children[0].style.right = '40px';
                 }
             }
             
-
+            // DEFAULT SCROLL
             if(window.pageYOffset < 50) {
                 topBar[0].style.position = '';
-                topBar[0].style.width = '';
+                topBar[0].style.width = '100%';
                 topBar[0].style.top = '';
-                topBar[0].style.left = '';
+                // topBar[0].style.left = '';
+                topBar[0].style.marginRight = '';
                 aboutSection.style.opacity = '0';
                 allBtns[2].style.top = '69px';
                 allBtns[1].style.top = '69px';
@@ -204,14 +230,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 imgCtn[2].style.transform = 'scale(1)';
                 imgCtn[1].style.transform = 'scale(1)';
                 imgCtn[0].style.transform = 'scale(1)';
-                if(window.innerWidth < 600) {
+                allBtns[0].style.backgroundColor = '';
+                if(window.innerWidth <= 600) {
                     for(i=0; i<3; i++){
                         allBtns[i].style.fontSize = '4vw';
                         allBtns[i].style.top = '0px';
                         allBtns[i].children[1].style.opacity = '0';
                         allBtns[i].children[0].style.right = '0';
-
                     }
+                    allBtns[0].style.backgroundColor = '';
                     allImgBtns[2].style.display = 'none';
                     allImgBtns[1].style.display = 'none';
                     allImgBtns[0].style.display = '';

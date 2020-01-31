@@ -22,8 +22,8 @@ h2 {
     top: 69px;
     font-size: 15px;
     animation: 2s fadeIn;
-    width: 100%;
     border-radius: 10px;
+    width: 100%;
 }
 
 @keyframes fadeIn {
@@ -38,6 +38,7 @@ h2 {
 
 #aboutImg {
     animation: ease-out 1.5s slideInL;
+    width: 100%;
 }
 
 #portImg {
@@ -68,9 +69,22 @@ h2 {
         top: 0;
         border-radius: 10px;
         font-size: 4vw;
+        width: 100%;
+        min-width: 100px;
     }
 }
-
+@media only screen and (min-width: 993px){
+    .topBar {
+        width: 70%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (min-width: 600px){
+    .topBar {
+        width: 85%;
+        margin-right: 7.5%;
+    }
+}
 @media only screen and (min-width: 1919px) {
     .btn {
         font-size: 32px;
@@ -92,8 +106,14 @@ h2 {
     cursor: pointer;
 }
 
+#newHeader:hover {
+    color: teal;
+}
+
+
 .topWords {
     transition: all 500ms;
+
 }
 
 .imgCtn {
@@ -111,7 +131,11 @@ p {
 
 div.topBar {
     z-index: 2;
+    max-width: 1280px;
+    width: 100%;
 }
+
+
 
 nav {
     width: 100%;
