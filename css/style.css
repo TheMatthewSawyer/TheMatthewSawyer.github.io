@@ -1,0 +1,182 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: black;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.btn {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    box-shadow: none;
+    top: 69px;
+    font-size: 15px;
+    animation: 2s fadeIn;
+    border-radius: 10px;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0%{opacity: 0;}75%{opacity: 0;}100%{opacity: 1;}
+}
+
+.imgBtn {
+    border-radius: 20px;
+    transition: all 200ms;
+    z-index: 2;
+}
+
+#aboutImg {
+    animation: ease-out 1.5s slideInL;
+    width: 100%;
+}
+
+#portImg {
+    animation: ease-out 1.5s slideUp;
+}
+
+#conImg {
+    animation: ease-out 1.5s slideInR;
+}
+
+@keyframes slideUp {
+    0% {transform: translatey(300%);}
+    100% {transform: translatey(0);}
+}
+
+@keyframes slideInL {
+    0% {transform: translatex(-200%);}
+    100% {transform: translatex(0);}
+}
+
+@keyframes slideInR {
+    0% {transform: translatex(200%);}
+    100% {transform: translatex(0);}
+}
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        top: 0;
+        border-radius: 10px;
+        font-size: 4vw;
+        width: 100%;
+        min-width: 100px;
+    }
+}
+@media only screen and (min-width: 993px){
+    .topBar {
+        width: 70%;
+        margin-right: 15%;
+    }
+}
+@media only screen and (min-width: 600px){
+    .topBar {
+        width: 85%;
+        margin-right: 7.5%;
+    }
+}
+@media only screen and (max-width: 460px){
+    .btn {
+        width: 5px;
+    }
+}
+@media only screen and (min-width: 1919px) {
+    .btn {
+        font-size: 32px;
+    }
+}
+
+#aboutSection {
+    margin-top: 400px;
+    opacity: 0;
+    transition: all 200ms;
+    z-index: 1;
+}
+
+#newHeader {
+    opacity: 0;
+    transition: all 500ms;
+    margin: -5px;
+    height: 1px;
+    cursor: pointer;
+}
+
+#newHeader:hover {
+    color: teal;
+}
+
+
+.topWords {
+    transition: all 500ms;
+
+}
+
+.imgCtn {
+    transition: all 500ms;
+}
+
+.container {
+    height: 10000px;
+}
+
+p {
+    transition: all 500ms;
+    z-index: 1;
+}
+
+div.topBar {
+    z-index: 2;
+    max-width: 1280px;
+    width: 100%;
+}
+
+
+
+nav {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#portfolioSection {
+    position: fixed;
+    bottom: -100px;
+    margin: 0;
+    width: 84%;
+}
+
+.portItem {
+    background-color: green;
+    height: 100px;
+}
+
+.aboutIcon, .portIcon, .conIcon {
+    position: relative;
+    right: 30px;
+    bottom: 10px;
+    margin-bottom: -55px;
+    transition: all 200ms;
+}
+
+.aboutTxt, .portTxt, .conTxt {
+    position: relative;
+    left: 15px;
+    transition: all 200ms;
+}
+
+.portIcon {right: 45px;}
+
+.portTxt {left: 15px;}
+
+.conIcon {right: 40px;}
+
+.conTxt {left: 15px;}

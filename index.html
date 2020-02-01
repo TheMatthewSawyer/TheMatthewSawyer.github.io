@@ -1,45 +1,133 @@
 <!DOCTYPE html>
-<html lang = "en">
-
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <title>Matthew Sawyer</title>
-    <link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
-    <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Material Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
 
+    <title>Matthew Sawyer</title>
+
+</head>
 <body>
     
-    <div id="header-back"></div>
-    <div id="container">
-    <header id="header">
-            <h1>Matthew Sawyer</h1>
-            <h3><a href="contact.html">Contact</a></h3>
-            <h5>|</h5>
-            <h3><a href="portfolio.html">Portfolio</a></h3>
-            <h5>|</h5>
-            <h3><a href="index.html">About</a></h3>
+<div class='container'>
+
+    <header id='header'>
+        
+
+        <div class='row'>
+            <div class='col m12'>
+
+                <h1 class='topWords'>Matthew Sawyer</h1>
+                <h2 class='topWords'>Soon-to-be web developer</h2>
+
+            </div>
+        </div>
+            
+        <div class='topBar'>
+
+            <div class='row'>
+                <div class='col m12'>
+                    <h3 id='newHeader'>Matthew Sawyer</h3>
+                </div>    
+            </div>
+
+            <div class='row'>
+                    <nav>
+
+                        <div class='col m4'>
+                            <a id='aboutBtn' class="waves-effect waves-light btn">
+                                <i class="material-icons aboutIcon">assignment_ind</i>
+                                <span class='aboutTxt'>About</span>
+                            </a>
+                        </div>
+
+                        <div class='col m4'>
+                            <a id='portBtn' class="waves-effect waves-light btn">
+                                <i class="material-icons portIcon">picture_in_picture</i>
+                                <span class='portTxt'>Portfolio</span>
+                            </a>
+                        </div>
+
+                        <div class='col m4'>
+                            <a id='conBtn' class="waves-effect waves-light btn">
+                                <i class="material-icons conIcon">message</i>
+                                <span class='conTxt'>Contact</span>
+                            </a>
+                        </div>
+
+                    </nav>
+            </div>
+
+    
+        
+
+            <div class='imgBtnContainer'>
+
+                <div class='row'>
+                    
+                    <div class='col m4 imgCtn'>
+                        <a href='#!'>
+                            <img id='aboutImg' class='imgBtn responsive-img' src='img/aboutme.jpeg' alt='A picture of me and my girlfriend'>
+                        </a>
+                    </div>
+                
+
+                    <div class='col m4 imgCtn'>
+                        <a href='#!'>
+                            <img id='portImg' class='imgBtn responsive-img' src='img/portfolio.png' alt='A picture representing a portfolio'>
+                        </a>
+                    </div>
+                    
+                    <div class='col m4 imgCtn'>
+                        <a href='#!'>
+                            <img id='conImg' class='imgBtn responsive-img' src='img/contact.png' alt='A blurred picture of an email inbox'>
+                        </a>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
     </header>
 
-        <div id="main">
-            <h2>About me</h2>
-            <img class="biopic" src="assets/images/biopic.jpg" alt="I'm the one on the right">
-            <p>
-                &emsp; From a young age, Matthew was obsessed with everything related to computers. At the age of 11, he even managed to cobble together a Frankenstein computer from a discarded pile of desktops at his mother's work. Through fickle fate, instead of being known as one of the world's youngest arsonists, the computer functioned (even though Matthew at that age thought the voltage selector at the back of the power supply was more of a personal preference). The smugness he felt at fixing a thing adults had declared broken solidified his fate in becoming insufferable and pursuing a job in the technology field.
-            </p>
-            <p>
-                &emsp; In 9th grade, Matthew began to jailbreak iPods for people who wanted basic functions like copy-paste. That lead to a fascination with the software side of technology. Editing characters in video games to look ridiculous or fall to their deaths in cutscenes became unbelievably hilarious. This mature sense of humor ensured a lack of friends that caused a positive feedback loop, consequently presenting Matthew with even more time to spend on the computer.
-            </p>
-            <p>
-                &emsp; In the present day, Matthew decided to leave his job in the booming yogurt service industry to pursue a career in tech. He is currently attending the Georgia Tech Coding Bootcamp. He lives in Tucker with his dog, Brownie, who has disappointingly yet to show any aptitude for computers or coding. <a href="dog.html" target="_blank">Click here to see Brownie!</a >
-            </p>
+    <div id='aboutSection' class='row'>
+        <div class='col m7 push-m5'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis tempore consequatur sed officia mollitia amet eaque praesentium dignissimos eum debitis labore adipisci rem totam id molestiae ut, repellat reprehenderit tenetur?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci earum magnam expedita possimus exercitationem eligendi beatae obcaecati impedit. Labore at, perferendis saepe cupiditate beatae ut velit praesentium non aperiam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt accusantium assumenda, commodi distinctio at minus recusandae fugiat quia libero, facere iure dolore quidem eaque ullam excepturi corrupti blanditiis sed enim.</p>
         </div>
-        <br><br>
     </div>
 
-    <footer id="footer">
-        Copyright ©
-    </footer>
+    <!-- <div id='portfolioSection'>
+        <div class='row portItem'>
+            <h1>Test</h1>
+        </div>
+        <div class='row portItem'>
+            <h1>Test</h1>
+        </div>
+        <div class='row portItem'>
+            <h1>Test</h1>
+        </div>
+        <div class='row portItem'>
+            <h1>Test</h1>
+        </div>
+    </div> -->
+
+</div>
 
 </body>
 </html>
