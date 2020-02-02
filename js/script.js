@@ -1,17 +1,3 @@
-/*
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    var el = document.querySelector('#test');
-    el.classList.add('fun');
-    el.textContent = 'hello';
-    el.addEventListener('click', (e) => { alert('yo');});
-
-});
-
-
-Non jQuery methods for my brain
-*/
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }

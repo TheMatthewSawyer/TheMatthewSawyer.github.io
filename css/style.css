@@ -172,39 +172,77 @@ nav {
 
 .conTxt {left: 15px;}
 
-
-#portfolioSection {
-    position: relative;
-    top: 200px;
-    margin: 0;
-    width: 100%;
-}
-
-.portItem {
-    background-color: green;
-    height: 100px;
-    border-radius: 10px;
-}
-
 .pi1 {
-    animation: ease-out 0.5s slideInP;
-}
-.pi2 {
     animation: ease-out 1s slideInP;
 }
+.pi2 {
+    animation: ease-out 1s slideInR;
+}
 .pi3 {
-    animation: ease-out 1.5s slideInP;
+    animation: ease-out 1.2s slideInP;
 }
 .pi4 {
-    animation: ease-out 2s slideInP;
+    animation: ease-out 1.2s slideInR;
 }
+
 @keyframes slideInP {
-    0% {transform: translatex(-200%);}
+    0% {transform: translatex(-300%);}
     100% {transform: translatex(0);}
 }
 
 .abtDesc {
     background-color: rgba(0, 0, 0, 0.65);
     padding: 5px 20px;
+    border-radius: 10px;
+}
+
+#portfolioSection {
+    position: relative;
+    top: 200px;
+    width: 100%;
+}
+
+.portfolioPic {
+    border: 4px solid black;
+    border-radius: 10px;
+}
+
+.portfolioPic:hover {
+    animation: 0.5s zoomIn;
+    transform: scale(1.1);
+}
+.portfolioPic:not(:hover) {
+    animation: 0.5s zoomOut;
+    transform: scale(1);
+}
+@keyframes zoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.1);}
+}
+@keyframes zoomOut {
+    0% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.54);
+    position: relative;
+    top: 2px;
+}
+
+.material-icons.md-36:hover {
+    color: #006d8f;
+}
+
+.githubLogo:not(:hover) {
+    filter: grayscale(100%);
+}
+
+.beneath {
+    text-align: center;
+    background-color: white;
+    margin: 0 auto;
+    border: 4px solid black;
     border-radius: 10px;
 }
