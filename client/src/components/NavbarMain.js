@@ -27,7 +27,7 @@ function NavbarMain(props) {
                     <NavDropdown title="Contact" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">LinkedIn</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">GitHub</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Resume</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Résumé</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">MatthewLeonardSawyer@gmail.com</NavDropdown.Item>
                     </NavDropdown>
