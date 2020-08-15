@@ -11,6 +11,7 @@ import { faNode } from '@fortawesome/free-brands-svg-icons';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
 import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
 import { faBootstrap } from '@fortawesome/free-brands-svg-icons';
+import Modal from '../Modal';
 
 function Home() {
 
@@ -40,7 +41,6 @@ function Home() {
                 }
                 setTimeout(cycleColors, 150);
             }
-            console.log('called');
         }
         cycleColors();
         /*
@@ -60,6 +60,8 @@ function Home() {
         var colorsDim = ['rgba(212, 64, 69, 0.25)','rgba(249, 182, 36, 0.25)','rgba(47, 238, 156, 0.25)','rgba(94, 75, 104, 0.25)','rgba(190, 184, 255, 0.25)','rgba(10, 130, 209, 0.25)'];
         var listItems = document.getElementsByClassName('listSkill');
         var currentColor = 0;
+        var overlay = document.getElementById('overlay');
+        var modal = document.getElementById('inModal');
         for (let z = 0; z < listItems.length; z++) {
             listItems[z].addEventListener('mouseover', () => {
                 listItems[z].style.backgroundColor = `${colorsDim[currentColor]}`;
@@ -71,6 +73,15 @@ function Home() {
             listItems[z].addEventListener('mouseout', () => {
                 listItems[z].style.backgroundColor = 'transparent';
             });
+            listItems[z].addEventListener('click', () => {
+                modal.style.display = 'block';
+                overlay.style.display = 'block';
+            });
+            document.getElementById('exitButton').addEventListener('click', () => {
+                modal.style.display = 'none';
+                overlay.style.display = 'none';
+            });
+
         }
         
         /*
@@ -119,10 +130,11 @@ function Home() {
 
     return (
         <Container style={{ marginTop: '20px' }}>
-
+            <Modal />
+            <div id='overlay'></div>
             <div className='greetingContainer'>
-                <h1 id='greeting' class='outline cantTouchThis'></h1>
-                <h2 id='subtitle' class='outlineInverse cantTouchThis' style={{ height: '50px' }}></h2>
+                <h1 id='greeting' className='outline cantTouchThis'></h1>
+                <h2 id='subtitle' className='outlineInverse cantTouchThis' style={{ height: '50px' }}></h2>
             </div>
 
             <Card style={{ textAlign: 'center', padding: '10px', marginTop: '10px' }} id='skillsCard'>
@@ -136,17 +148,17 @@ function Home() {
 
                         <Col>
                             <FontAwesomeIcon icon={faJava} size='4x' className='skillIcon' />
-                            <span className='infoHover'>Java</span>
+                            <span className='infoHover cantTouchThis'>Java</span>
                         </Col>
 
                         <Col>
                             <FontAwesomeIcon icon={faJsSquare} size='4x' className='skillIcon' />
-                            <span className='infoHover'>JavaScript</span>
+                            <span className='infoHover cantTouchThis'>JavaScript</span>
                         </Col>
 
                         <Col>
                             <FontAwesomeIcon icon={faNode} size='4x' className='skillIcon' />
-                            <span className='infoHover'>NodeJS</span>
+                            <span className='infoHover cantTouchThis'>NodeJS</span>
                         </Col>
 
                     </Row>
@@ -154,17 +166,17 @@ function Home() {
 
                         <Col>
                             <FontAwesomeIcon icon={faBootstrap} size='4x' className='skillIcon' />
-                            <span className='infoHover'>Bootstrap</span>
+                            <span className='infoHover cantTouchThis'>Bootstrap</span>
                         </Col>
 
                         <Col>
                             <FontAwesomeIcon icon={faCss3Alt} size='4x' className='skillIcon' />
-                            <span className='infoHover'>CSS3</span>
+                            <span className='infoHover cantTouchThis'>CSS3</span>
                         </Col>
 
                         <Col>
                             <FontAwesomeIcon icon={faReact} size='4x' className='skillIcon' />
-                            <span className='infoHover'>React</span>
+                            <span className='infoHover cantTouchThis'>React</span>
                         </Col>
 
                     </Row>
@@ -176,14 +188,14 @@ function Home() {
             <Card style={{ marginTop: '20px' }} id='listCard'>
                 <Card.Body>
                     <Row>
-                        <Col md={3} className='listHeader'>
+                        <Col md={3} className='listHeader cantTouchThis'>
                             As well as...
                         </Col>
                         <Col md={9}>
                             <ListGroup variant="flush">
-                                <ListGroup.Item className='listSkill'>MySQL &amp; MongoDB</ListGroup.Item>
-                                <ListGroup.Item className='listSkill'>4 years Shift Leader at Menchie's</ListGroup.Item>
-                                <ListGroup.Item className='listSkill'>Taken courses in Discrete Mathematics &amp; Data Structures</ListGroup.Item>
+                                <ListGroup.Item className='listSkill cantTouchThis'>MySQL &amp; MongoDB</ListGroup.Item>
+                                <ListGroup.Item className='listSkill cantTouchThis'>4 years Shift Leader at Menchie's</ListGroup.Item>
+                                <ListGroup.Item className='listSkill cantTouchThis'>Taken courses in Discrete Mathematics &amp; Data Structures</ListGroup.Item>
                             </ListGroup>
                         </Col>
                     </Row>
