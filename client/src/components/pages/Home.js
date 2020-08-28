@@ -122,7 +122,8 @@ function Home() {
         typeGreeting();
 
 
-
+        document.getElementsByTagName("BODY")[0].style.backgroundImage = `none`;
+        document.getElementsByTagName("BODY")[0].style.backgroundColor = 'white';
 
     }, []);
 

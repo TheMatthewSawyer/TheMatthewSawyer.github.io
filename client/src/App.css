@@ -271,6 +271,7 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     left: 50%;
     margin-top: -199px;
     margin-left: -960px;
+    z-index: 3;
 }
 
 #aboutKeyboard {

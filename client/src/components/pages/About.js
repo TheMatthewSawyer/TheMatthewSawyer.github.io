@@ -5,9 +5,21 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import keyboard from '../images/keyboard.png';
-import face from '../images/face.png'
+import face from '../images/face.png';
+import background from '../images/background.png';
 
 function About() {
+
+    React.useEffect(()=>{
+        var x = document.getElementsByTagName("BODY")[0];
+        x.style.backgroundImage = `url('${background}')`;
+        x.style.backgroundColor = 'black';
+        x.style.backgroundPositionY = '56px';
+        x.style.backgroundRepeat = 'no-repeat';
+        // background-position-x: -400px;
+        // background-position-y: -70px;
+        // background-repeat: no-repeat;
+    },[])
 
     return (
 
