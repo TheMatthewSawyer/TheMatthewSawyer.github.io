@@ -16,7 +16,7 @@ function NavbarMain(props) {
     const goHome = () => { props.setPage('home'); }
 
     return (
-        <Navbar bg="dark" variant="dark" expand="md">
+        <Navbar bg="dark" variant="dark" expand="md" style={{zIndex: 100}}>
             <Navbar.Brand onClick={goHome}>Matthew Sawyer</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

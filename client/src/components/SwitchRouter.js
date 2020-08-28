@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import About from './pages/About';
 import NavbarMain from './NavbarMain';
 import Button from 'react-bootstrap/Button';
 
@@ -31,7 +32,7 @@ function SwitchRouter() {
       return (
         <div>
           <NavbarMain setPage={setPage} />
-            About
+          <About />
         </div>
       );
 

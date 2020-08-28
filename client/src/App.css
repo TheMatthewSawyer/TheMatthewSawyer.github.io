@@ -1,18 +1,17 @@
 /*
- .d8888b.           888                           
-d88P  Y88b          888                           
-Y88b.               888                           
- "Y888b.    .d88b.  888888      888  888 88888b.  
-    "Y88b. d8P  Y8b 888         888  888 888 "88b 
-      "888 88888888 888         888  888 888  888 
-Y88b  d88P Y8b.     Y88b.       Y88b 888 888 d88P 
- "Y8888P"   "Y8888   "Y888       "Y88888 88888P"  
-                                         888      
-                                         888      
-                                         888      
+
+ .M"""bgd            mm                               
+,MI    "Y            MM                               
+`MMb.      .gP"Ya  mmMMmm      `7MM  `7MM  `7MMpdMAo. 
+  `YMMNq. ,M'   Yb   MM          MM    MM    MM   `Wb 
+.     `MM 8M""""""   MM          MM    MM    MM    M8 
+Mb     dM YM.    ,   MM          MM    MM    MM   ,AP 
+P"Ybmmd"   `Mbmmd'   `Mbmo       `Mbod"YML.  MMbmmd'  
+                                             MM       
+                                           .JMML.     
 */
 
-html, body {min-height:100%;margin:0;}
+html, body {min-height:100%;margin:0;overflow:hidden;}
 
 body {
     background-color: transparent;
@@ -22,7 +21,7 @@ body {
     transition: all 500ms;
 }
 
-html {
+#landingPage {
     background:
     -webkit-linear-gradient(106deg, hsla(204.12, 90.87%, 42.94%, 1) 0%, hsla(204.12, 90.87%, 42.94%, 0) 65%),
     -webkit-linear-gradient(220deg, hsla(244.93, 100%, 85.69%, 1) 0%, hsla(244.93, 100%, 85.69%, 0) 65%),
@@ -37,6 +36,12 @@ html {
     linear-gradient(25deg, hsla(154.24, 84.89%, 55.88%, 1) 10%, hsla(154.24, 84.89%, 55.88%, 0) 80%),
     linear-gradient(315deg, hsla(41.13, 94.67%, 55.88%, 1) 15%, hsla(41.13, 94.67%, 55.88%, 0) 80%),
     linear-gradient(245deg, hsla(357.99, 62.87%, 53.53%, 1) 100%, hsla(357.99, 62.87%, 53.53%, 0) 70%);
+    
+    margin-top: 20px;
+    padding: 0 20px 20px 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.125);
 }
 
 .outline {
@@ -68,6 +73,78 @@ html {
     user-select: none;
 }
 
+.visible {
+    display: block;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+/* 
+Didn't end up using this but it creates a speech bubble. May use later
+.messageShapeOuter {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    background-color: black;
+    margin: 20px;
+    min-height: 200px;
+    padding: 0px 0px 10% 0px;
+    animation: fadeIn 200ms;
+}
+.messageShapeInner {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+    top: 10px;
+    min-height: 169px;
+    width: 96%;
+    left: 2%;
+    padding: 0px 0px 12% 0px;
+} */
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+  }
+  
+  #mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+  }
+
+/*
+Navbar
+*/
+
+.navbar-brand {
+    cursor: pointer;
+}
+
+.nav-link {
+    transition: all 75ms;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+/*                                        
+`7MMF'  `7MMF'                                     
+  MM      MM                                       
+  MM      MM   ,pW"Wq.  `7MMpMMMb.pMMMb.   .gP"Ya  
+  MMmmmmmmMM  6W'   `Wb   MM    MM    MM  ,M'   Yb 
+  MM      MM  8M     M8   MM    MM    MM  8M"""""" 
+  MM      MM  YA.   ,A9   MM    MM    MM  YM.    , 
+.JMML.  .JMML. `Ybmd9'  .JMML  JMML  JMML. `Mbmmd' 
+*/
+
 .greetingContainer {
     height: 275px;
 }
@@ -77,9 +154,6 @@ html {
 }
 #subtitle {
     font-size: 50px;
-}
-.visible {
-    display: block;
 }
 
 .typeCursorDefault {
@@ -111,15 +185,6 @@ html {
     z-index: 10;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .exitBtn {
     position: relative;
     left: 87%;
@@ -134,34 +199,16 @@ html {
     color: #5D4A66;
 }
 
-/*
-Navbar
-*/
-
-.navbar-brand {
-    cursor: pointer;
-}
-
-.nav-link {
-    transition: all 75ms;
-}
-
-.nav-link:hover {
-    transform: scale(1.1);
-}
 
 /*
- .d8888b.  888      d8b 888 888    d8b                                    
-d88P  Y88b 888      Y8P 888 888    Y8P                                    
-Y88b.      888          888 888                                           
- "Y888b.   888  888 888 888 888    888  .d8888b .d88b.  88888b.  .d8888b  
-    "Y88b. 888 .88P 888 888 888    888 d88P"   d88""88b 888 "88b 88K      
-      "888 888888K  888 888 888    888 888     888  888 888  888 "Y8888b. 
-Y88b  d88P 888 "88b 888 888 888    888 Y88b.   Y88..88P 888  888      X88 
- "Y8888P"  888  888 888 888 888    888  "Y8888P "Y88P"  888  888  88888P' 
-                                                                            
-                                                                            
-                                                                            
+                      ,,    ,,    ,,        ,,                     
+ .M"""bgd `7MM        db  `7MM  `7MM        db                     
+,MI    "Y   MM              MM    MM                               
+`MMb.       MM  ,MP'`7MM    MM    MM      `7MM   ,p6"bo   ,pW"Wq.  
+  `YMMNq.   MM ;Y     MM    MM    MM        MM  6M'  OO  6W'   `Wb 
+.     `MM   MM;Mm     MM    MM    MM        MM  8M       8M     M8 
+Mb     dM   MM `Mb.   MM    MM    MM        MM  YM.    , YA.   ,A9 
+P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'  
 */
 
 .skillIcon {
@@ -197,25 +244,97 @@ Y88b  d88P 888 "88b 888 888 888    888 Y88b.   Y88..88P 888  888      X88
     cursor: pointer;
 }
 
-/* .listSkill:hover {
-    background-color: rgba(212, 64, 69, 0.25);
-} */
-
 .listHeader {
     font-size: 24px;
     font-weight: bolder;
 }
 
-/*
- .d8888888b.                              888 d8b          
-d88P"   "Y88b                             888 Y8P          
-888  d8b  888                             888              
-888  888  888 88888b.d88b.   .d88b.   .d88888 888  8888b.  
-888  888bd88P 888 "888 "88b d8P  Y8b d88" 888 888     "88b 
-888  Y8888P"  888  888  888 88888888 888  888 888 .d888888 
-Y88b.     .d8 888  888  888 Y8b.     Y88b 888 888 888  888 
- "Y88888888P" 888  888  888  "Y8888   "Y88888 888 "Y888888 
+
+/*                            
+               ,,                                      
+      db      *MM                                mm    
+     ;MM:      MM                                MM    
+    ,V^MM.     MM,dMMb.   ,pW"Wq.  `7MM  `7MM  mmMMmm  
+   ,M  `MM     MM    `Mb 6W'   `Wb   MM    MM    MM    
+   AbmmmqMA    MM     M8 8M     M8   MM    MM    MM    
+  A'     VML   MM.   ,M9 YA.   ,A9   MM    MM    MM    
+.AMA.   .AMMA. P^YbmdP'   `Ybmd9'    `Mbod"YML.  `Mbmo                      
 */
+
+#aboutPage {
+    overflow: hidden;
+}
+
+#keyboardContainer {
+    position: absolute;
+    width: 1920px;
+    left: 50%;
+    margin-top: -199px;
+    margin-left: -960px;
+}
+
+#aboutKeyboard {
+    animation: fadeIn 200ms linear;
+    position: relative;
+    margin: 0 auto;
+}
+
+#containTheFace {
+    position: absolute;
+    width: 1920px;
+    left: 50%;
+    margin-left: -600px;
+    animation: pulse infinite 8s;
+    animation-delay: 4s;
+    animation-direction: alternate-reverse;
+    /* radial-gradient(circle, rgb(255, 0, 0) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%); */
+    background-position-x: -400px;
+    background-position-y: -70px;
+    background-repeat: no-repeat;
+}
+
+#face {
+    animation: fadeIn 200ms linear;
+    position: relative;
+    z-index: -1;
+    height: 540px;
+    left: calc(10% - 200px);
+}
+#aboutBody{ width: 100%;}
+
+/*
+                                                                      
+                                                   ,,    ,,           
+     ,.-==-.                                     `7MM    db           
+  ,pd'      `g.                                    MM                 
+ ,P   ,dMb.A  Y. `7MMpMMMb.pMMMb.   .gP"Ya    ,M""bMM  `7MM   ,6"Yb.  
+,P   dP  ,MP  j8   MM    MM    MM  ,M'   Yb ,AP    MM    MM  8)   MM  
+8:  dM'  dM   d'   MM    MM    MM  8M"""""" 8MI    MM    MM   ,pm9MM  
+Wb  YML.dML..d'    MM    MM    MM  YM.    , `Mb    MM    MM  8M   MM  
+ Wb  ``""^`"'    .JMML  JMML  JMML. `Mbmmd'  `Wbmd"MML..JMML.`Moo9^Yo.
+  `M..     .,!                                                        
+    `Ybmmd'                                                           
+*/
+
+@media only screen and (min-width: 1920px) {
+    #keyboardContainer {
+        left: 0;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #face {
+        height: 640px;
+        left: -120px;
+        top: -100px;
+    }
+    #containTheFace {
+        background-position-x: -420px;
+        background-position-y: -190px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .nav-link:hover {
         transform: scale(1);
@@ -232,6 +351,20 @@ Y88b.     .d8 888  888  888 Y8b.     Y88b 888 888 888  888
     .greetingContainer {
         height: 200px;
     }
+    html {overflow-y:scroll;}
+    #face {
+        display: inline-block;
+        z-index: 1;
+        height: 340px;
+        left: 20%;
+        border: 2px solid black;
+    }
+    #aboutBody{
+        margin-top: 340px;
+    }
+    #containTheFace {
+        background-image: none;
+    }
 }
 
 @media only screen and (max-width: 499px) {
@@ -240,5 +373,108 @@ Y88b.     .d8 888  888  888 Y8b.     Y88b 888 888 888  888
     }
     #subtitle {
         font-size: 20px;
+    }
+    #keyboardContainer {
+        display: none;
+    }
+}
+
+/*                   
+     ,.-==-.      `7MM                                  
+  ,pd'      `g.     MM                                  
+ ,P   ,dMb.A  Y.    MM  ,MP' .gP"Ya  `7M'   `MF',pP"Ybd 
+,P   dP  ,MP  j8    MM ;Y   ,M'   Yb   VA   ,V  8I   `" 
+8:  dM'  dM   d'    MM;Mm   8M""""""    VA ,V   `YMMMa. 
+Wb  YML.dML..d'     MM `Mb. YM.    ,     VVV    L.   I8 
+ Wb  ``""^`"'     .JMML. YA. `Mbmmd'     ,V     M9mmmP' 
+  `M..     .,!                          ,V              
+    `Ybmmd'                          OOb"               
+*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        background-image:
+    radial-gradient(circle, rgba(255, 177, 177, 0) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    /*
+    FIRST PULSE
+    */
+    21% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    22% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    23% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    24% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    25% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    /*
+    SECOND PULSE
+    */
+    47% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    48% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    49% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    50% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    /*
+    THIRD PULSE
+    */
+    73% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    74% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    75% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.116) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    /*
+    OUT
+    */
+    98% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1% 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    99% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.05) 1% 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+    100% {
+        background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0) 1% 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
     }
 }

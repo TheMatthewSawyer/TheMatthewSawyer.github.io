@@ -76,6 +76,7 @@ function Home() {
             listItems[z].addEventListener('click', () => {
                 modal.style.display = 'block';
                 overlay.style.display = 'block';
+                console.log('clicked!');
             });
             document.getElementById('exitButton').addEventListener('click', () => {
                 modal.style.display = 'none';
@@ -129,7 +130,7 @@ function Home() {
 
 
     return (
-        <Container style={{ marginTop: '20px' }}>
+        <Container id='landingPage'>
             <Modal />
             <div id='overlay'></div>
             <div className='greetingContainer'>
