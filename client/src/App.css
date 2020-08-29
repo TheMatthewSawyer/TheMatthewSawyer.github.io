@@ -71,6 +71,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-user-drag: none;
 }
 
 .visible {
@@ -103,22 +104,6 @@ Didn't end up using this but it creates a speech bubble. May use later
     padding: 0px 0px 12% 0px;
 } */
 
-#mydiv {
-    position: absolute;
-    z-index: 9;
-    background-color: #f1f1f1;
-    border: 1px solid #d3d3d3;
-    text-align: center;
-  }
-  
-  #mydivheader {
-    padding: 10px;
-    cursor: move;
-    z-index: 10;
-    background-color: #2196F3;
-    color: #fff;
-  }
-
 /*
 Navbar
 */
@@ -134,6 +119,46 @@ Navbar
 .nav-link:hover {
     transform: scale(1.1);
 }
+
+.divBirdWing {
+    height: 50px;
+    width: 50px;
+    animation: wing 1s infinite alternate-reverse;
+    background: rgb(91,91,91);
+    background: -moz-linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b5b5b",endColorstr="#000000",GradientType=1);
+    /* z-index: -1; */
+}
+
+.birdBody {
+    height: 50px;
+    width: 50px;
+    clip-path: polygon(17% 46%, 34% 41%, 55% 42%, 78% 43%, 86% 32%, 92% 28%, 96% 36%, 96% 43%, 98% 50%, 96% 57%, 96% 64%, 94% 70%, 78% 62%, 50% 67%, 34% 67%, 20% 64%, 8% 64%, 3% 66%, 4% 59%, 9% 52%);
+    background: rgb(29,29,29);
+    background: -moz-linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
+    background: linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d1d1d",endColorstr="#252525",GradientType=1);
+    position: absolute;
+    /* top: 100px; */
+    /* z-index: -1; */
+}
+
+.birdContainer {
+    z-index: -1;
+    position: absolute;
+    /* left: 0; */
+    /* transition-timing-function: cubic-bezier(1, 0.7, 1, 0.8); */
+    /* animation: fly 20s linear; */
+    opacity: 0;
+    
+}
+.birdClick {
+    cursor: crosshair;
+}
+
 
 /*                                        
 `7MMF'  `7MMF'                                     
@@ -226,7 +251,7 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     top: 120%;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: 2px solid black;
     padding: 5px 20px;
     font-size: 18px;
@@ -278,6 +303,7 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     animation: fadeIn 200ms linear;
     position: relative;
     margin: 0 auto;
+
 }
 
 #containTheFace {
@@ -286,7 +312,7 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     left: 50%;
     margin-left: -600px;
     animation: pulse infinite 8s;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-direction: alternate-reverse;
     /* radial-gradient(circle, rgb(255, 0, 0) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%); */
     background-position-x: -400px;
@@ -301,7 +327,10 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     height: 540px;
     left: calc(10% - 200px);
 }
-#aboutBody{ width: 100%;}
+#aboutBody{ 
+    width: 100%;
+    margin-top: 290px;
+}
 
 /*
                                                                       
@@ -358,7 +387,6 @@ Wb  YML.dML..d'    MM    MM    MM  YM.    , `Mb    MM    MM  8M   MM
         z-index: 1;
         height: 340px;
         left: 20%;
-        border: 2px solid black;
     }
     #aboutBody{
         margin-top: 340px;
@@ -366,6 +394,7 @@ Wb  YML.dML..d'    MM    MM    MM  YM.    , `Mb    MM    MM  8M   MM
     #containTheFace {
         background-image: none;
     }
+
 }
 
 @media only screen and (max-width: 499px) {
@@ -477,5 +506,37 @@ Wb  YML.dML..d'     MM `Mb. YM.    ,     VVV    L.   I8
     100% {
         background-image:
     radial-gradient(circle, rgba(255, 255, 255, 0) 1% 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%);
+    }
+}
+
+@keyframes bird {
+    0% {
+        clip-path: polygon(36% 25%, 60% 7%, 67% 10%, 70% 18%, 69% 25%, 67% 36%, 60% 45%, 69% 51%, 79% 55%, 90% 51%, 86% 68%, 56% 57%, 21% 55%, 0 46%, 11% 39%, 23% 38%);
+    }
+    100% {
+        clip-path: polygon(23% 38%, 37% 31%, 53% 28%, 81% 41%, 94% 39%, 94% 49%, 69% 52%, 66% 64%, 70% 82%, 63% 93%, 32% 67%, 33% 59%, 25% 54%, 14% 51%, 2% 46%, 13% 40%);
+    }
+}
+
+@keyframes wing {
+    0% {
+        clip-path: polygon(52% 13%, 65% 3%, 75% 16%, 79% 26%, 71% 53%, 62% 61%, 36% 61%, 40% 31%);
+    }
+    100% {
+        clip-path: polygon(45% 82%, 59% 100%, 76% 89%, 73% 75%, 71% 64%, 61% 53%, 41% 53%, 46% 61%);
+    }
+}
+
+@keyframes fly {
+    0% {
+        opacity: 1;
+        right: -50px;
+    }
+    99% {
+        opacity: 1;
+        right: 120%;
+    }
+    100% {
+        opacity: 0;
     }
 }
