@@ -11,7 +11,7 @@ P"Ybmmd"   `Mbmmd'   `Mbmo       `Mbod"YML.  MMbmmd'
                                            .JMML.     
 */
 
-html, body {min-height:100%;margin:0;overflow:hidden;}
+html, body {min-height:100%;margin:0;overflow: hidden;}
 
 body {
     background-color: transparent;
@@ -104,6 +104,7 @@ Didn't end up using this but it creates a speech bubble. May use later
     padding: 0px 0px 12% 0px;
 } */
 
+
 /*
 Navbar
 */
@@ -120,45 +121,23 @@ Navbar
     transform: scale(1.1);
 }
 
-.divBirdWing {
-    height: 50px;
-    width: 50px;
-    animation: wing 1s infinite alternate-reverse;
-    background: rgb(91,91,91);
-    background: -moz-linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
-    background: -webkit-linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
-    background: linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b5b5b",endColorstr="#000000",GradientType=1);
-    /* z-index: -1; */
+#emailAddress {
+    color: black;
 }
 
-.birdBody {
-    height: 50px;
-    width: 50px;
-    clip-path: polygon(17% 46%, 34% 41%, 55% 42%, 78% 43%, 86% 32%, 92% 28%, 96% 36%, 96% 43%, 98% 50%, 96% 57%, 96% 64%, 94% 70%, 78% 62%, 50% 67%, 34% 67%, 20% 64%, 8% 64%, 3% 66%, 4% 59%, 9% 52%);
-    background: rgb(29,29,29);
-    background: -moz-linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
-    background: linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d1d1d",endColorstr="#252525",GradientType=1);
+#successAlert {
+    font-size: 18px;
     position: absolute;
-    /* top: 100px; */
-    /* z-index: -1; */
+    width: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 100px;
+    animation: alert 5s;
+    display: none;
 }
-
-.birdContainer {
-    z-index: -1;
-    position: absolute;
-    /* left: 0; */
-    /* transition-timing-function: cubic-bezier(1, 0.7, 1, 0.8); */
-    /* animation: fly 20s linear; */
-    opacity: 0;
-    
-}
-.birdClick {
-    cursor: crosshair;
-}
-
 
 /*                                        
 `7MMF'  `7MMF'                                     
@@ -238,7 +217,7 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
 
 .skillIcon {
     transition: all 100ms;
-    cursor: pointer;
+    cursor: cell;
 }
 
 .skillIcon:hover {
@@ -314,11 +293,11 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     animation: pulse infinite 8s;
     animation-delay: 1s;
     animation-direction: alternate-reverse;
-    /* radial-gradient(circle, rgb(255, 0, 0) 1%, rgba(0, 128, 0, 0) 15%, rgba(0, 0, 255, 0) 60%); */
     background-position-x: -400px;
     background-position-y: -70px;
     background-repeat: no-repeat;
 }
+
 
 #face {
     animation: fadeIn 200ms linear;
@@ -327,10 +306,109 @@ P"Ybmmd"  .JMML. YA..JMML..JMML..JMML.    .JMML. YMbmd'   `Ybmd9'
     height: 540px;
     left: calc(10% - 200px);
 }
+
 #aboutBody{ 
     width: 100%;
     margin-top: 290px;
 }
+
+
+.divBirdWing {
+    height: 50px;
+    width: 50px;
+    animation: wing 1s infinite alternate-reverse;
+    background: rgb(91,91,91);
+    background: -moz-linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(91,91,91,1) 0%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b5b5b",endColorstr="#000000",GradientType=1);
+    /* z-index: -1; */
+}
+
+.birdBody {
+    height: 50px;
+    width: 50px;
+    clip-path: polygon(17% 46%, 34% 41%, 55% 42%, 78% 43%, 86% 32%, 92% 28%, 96% 36%, 96% 43%, 98% 50%, 96% 57%, 96% 64%, 94% 70%, 78% 62%, 50% 67%, 34% 67%, 20% 64%, 8% 64%, 3% 66%, 4% 59%, 9% 52%);
+    background: rgb(29,29,29);
+    background: -moz-linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
+    background: linear-gradient(90deg, rgba(29,29,29,1) 7%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 73%, rgba(37,37,37,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d1d1d",endColorstr="#252525",GradientType=1);
+    position: absolute;
+    /* top: 100px; */
+    /* z-index: -1; */
+}
+
+.birdContainer {
+    z-index: -1;
+    position: absolute;
+    /* left: 0; */
+    /* transition-timing-function: cubic-bezier(1, 0.7, 1, 0.8); */
+    /* animation: fly 20s linear; */
+    opacity: 0;
+    
+}
+.birdClick {
+    cursor: crosshair;
+}
+
+
+
+/*
+                                                                
+                               ,,                                 
+`7MM"""Mq.                     db                    mm           
+  MM   `MM.                                          MM           
+  MM   ,M9 `7Mb,od8  ,pW"Wq. `7MM  .gP"Ya   ,p6"bo mmMMmm   ,pP"Ybd 
+  MMmmdM9    MM' "' 6W'   `Wb  MM ,M'   Yb 6M'  OO   MM     8I   `" 
+  MM         MM     8M     M8  MM 8M"""""" 8M        MM     `YMMMa. 
+  MM         MM     YA.   ,A9  MM YM.    , YM.    ,  MM     L.   I8 
+.JMML.     .JMML.    `Ybmd9'   MM  `Mbmmd'  YMbmd'   `MbmoM  9mmmP' 
+                            QO MP                                 
+                            `bmP                                  
+*/
+#projectsHeader {
+    background-color: black;
+    padding: 5px;
+    text-decoration: none;
+    animation: clippy 2000ms linear;
+}
+
+#projectsHeadCent {
+    background-color: white;
+    padding: 20px;
+    font-size: 32px;
+    border: 15px solid black;
+    border: none;
+}
+
+.projectsHeadCentAnimation {
+    animation: colorIn 2000ms linear;
+}
+
+.cardDefault {
+    animation: fadeIn 500ms linear;
+}
+
+.projectCardFourAnimation {
+    animation: projectFade 4300ms linear;
+}
+.projectCardThreeAnimation {
+    animation: projectFade 4200ms linear;
+}
+.projectCardTwoAnimation {
+    animation: projectFade 4100ms linear;
+}
+.projectCardOneAnimation {
+    animation: projectFade 4000ms linear;
+}
+
+.cardDefault:hover {
+    transition: all 200ms;
+    transform: scale(1.03);
+}
+
+
 
 /*
                                                                       
@@ -381,7 +459,7 @@ Wb  YML.dML..d'    MM    MM    MM  YM.    , `Mb    MM    MM  8M   MM
     .greetingContainer {
         height: 200px;
     }
-    html {overflow-y:scroll;}
+
     #face {
         display: inline-block;
         z-index: 1;
@@ -538,5 +616,101 @@ Wb  YML.dML..d'     MM `Mb. YM.    ,     VVV    L.   I8
     }
     100% {
         opacity: 0;
+    }
+}
+
+
+
+@keyframes colorCycle {
+    0% {
+        background-color: black;
+    }
+    16% {
+        background-color: #D33E43;
+    }
+    32% {
+        background-color: #F9B624;
+    }
+    48% {
+        background-color: #2FEE9C;
+    }
+    64% {
+        background-color: #5D4A66;
+    }
+    80% {
+        background-color: #BCB6FF;
+    }
+    96% {
+        background-color: #0A81D1;
+    }
+    100%{
+        background-color: black;
+    }
+}
+
+@keyframes clippy {
+    0% {
+        clip-path: circle(0.0% at 0 50%);
+        background-color: #0A81D1;
+    }
+    25% {
+        background-color: #89d0ff;
+    }
+    50% {
+        clip-path: circle(75.0% at 0 50%);
+
+    }
+    100% {
+        clip-path: circle(150.0% at 0 50%);
+        background-color: black;
+    }
+}
+
+@keyframes colorIn {
+    0% {
+        padding: 55px;
+    }
+    100% {
+        padding: 20px;
+    }
+}
+
+@keyframes projectFade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        background-color: white;
+    }
+    80% {
+        background-color: lightblue;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes alert {
+    0% {
+        opacity: 0;
+        top: -50px;
+    }
+    20% {
+        opacity: 1;
+        top: 100px;
+    }
+    80% {
+        opacity: 1;
+        top: 100px;
+    }
+    100% {
+        opacity: 0;
+        top: -50px;
     }
 }

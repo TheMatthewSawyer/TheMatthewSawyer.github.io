@@ -13,18 +13,40 @@ import { faCss3Alt } from '@fortawesome/free-brands-svg-icons';
 import { faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import Modal from '../Modal';
 
-function Home() {
+function Home(props) {
+
+    /*
+    Causes the cursor to blink
+    */
+    function typingCursor() {
+        if (document.getElementById('typeCursor')) {
+            document.getElementById('typeCursor').classList.toggle("typeCursorDefault");
+            setTimeout(typingCursor, 530);
+        }
+    }
 
     React.useEffect(() => {
+
+
+        /*
+        Insures background image is reset from all other pages
+        */
+        document.getElementsByTagName("BODY")[0].style.backgroundImage = `none`;
+        document.getElementsByTagName("BODY")[0].style.backgroundColor = 'white';
+
+        /*
+        Variable declaration for the skill icons
+        */
         const colors = ['#D33E43', '#F9B624', '#2FEE9C', '#5D4A66', '#BCB6FF', '#0A81D1'];
         const icons = document.getElementsByClassName('skillIcon');
         var i = 0;
         var x = 0;
         var y = 0;
+
         /*
-        Above are variables for the skill icons.
-        It cycles through the all colors before
-        stopping on the icon's chosen color.
+        cycleColors() is a recursive function which goes through
+        each of the colors on each icon before stopping on that
+        icon's chosen color
         */
         function cycleColors() {
             if (x < icons.length) {
@@ -34,7 +56,7 @@ function Home() {
                 icons[x].style.color = colors[i];
                 i++;
                 y++;
-                console.log(i, x)
+
                 if (y > 5 && i - 1 === x) {
                     y = 0;
                     x++;
@@ -43,8 +65,9 @@ function Home() {
             }
         }
         cycleColors();
+
         /*
-        Bellow adds event listeners for hoverable icons
+        \/ Adds event listeners for hoverable icons
         */
         for (let z = 0; z < icons.length; z++) {
             icons[z].addEventListener('mouseover', () => {
@@ -54,10 +77,11 @@ function Home() {
                 infoHover[z].style.display = 'none';
             });
         }
+
         /*
-        Bellow adds event listeners for list items
+        \/ Adds event listeners for list items
         */
-        var colorsDim = ['rgba(212, 64, 69, 0.25)','rgba(249, 182, 36, 0.25)','rgba(47, 238, 156, 0.25)','rgba(94, 75, 104, 0.25)','rgba(190, 184, 255, 0.25)','rgba(10, 130, 209, 0.25)'];
+        var colorsDim = ['rgba(212, 64, 69, 0.25)', 'rgba(249, 182, 36, 0.25)', 'rgba(47, 238, 156, 0.25)', 'rgba(94, 75, 104, 0.25)', 'rgba(190, 184, 255, 0.25)', 'rgba(10, 130, 209, 0.25)'];
         var listItems = document.getElementsByClassName('listSkill');
         var currentColor = 0;
         var overlay = document.getElementById('overlay');
@@ -66,7 +90,7 @@ function Home() {
             listItems[z].addEventListener('mouseover', () => {
                 listItems[z].style.backgroundColor = `${colorsDim[currentColor]}`;
                 currentColor++;
-                if(currentColor > listItems.length) {
+                if (currentColor > listItems.length) {
                     currentColor = 0;
                 }
             });
@@ -84,59 +108,59 @@ function Home() {
             });
 
         }
-        
+
         /*
         Greeting text
         */
-        const greetingText = "Hello! I'm Matthew :)";
-        const subtitleText = "Full Stack Web Developer";
-        const greetingDisplay = document.getElementById('greeting');
-        const subtitleDisplay = document.getElementById('subtitle');
-        var greetingCounter = 0;
-        var subtitleCounter = 0;
-        function typeGreeting() {
-            if (greetingCounter < greetingText.length) {
-                greetingDisplay.innerHTML += greetingText.charAt(greetingCounter);
-                greetingCounter++;
-                setTimeout(typeGreeting, 50);
-            } else {
-                typeSubtitle();
+        if (props.hasSeen) {
+            document.getElementById('greeting').innerHTML = "Hello! I'm Matthew :)";
+            document.getElementById('subtitle').innerHTML = "Full Stack Web Developer<span class='typeCursorDefault' id='typeCursor'>_</span>";
+            typingCursor();
+        } else {
+            const greetingText = "Hello! I'm Matthew :)";
+            const subtitleText = "Full Stack Web Developer";
+            const greetingDisplay = document.getElementById('greeting');
+            greetingDisplay.innerHTML = '';
+            const subtitleDisplay = document.getElementById('subtitle');
+            subtitleDisplay.innerHTML = '';
+            var greetingCounter = 0;
+            var subtitleCounter = 0;
+            function typeGreeting() {
+                if (greetingCounter < greetingText.length) {
+                    greetingDisplay.innerHTML += greetingText.charAt(greetingCounter);
+                    greetingCounter++;
+                    setTimeout(typeGreeting, 50);
+                } else {
+                    typeSubtitle();
+                }
             }
-        }
-        function typeSubtitle() {
-            if (subtitleCounter < subtitleText.length) {
-                subtitleDisplay.innerHTML += subtitleText.charAt(subtitleCounter);
-                subtitleCounter++;
-                setTimeout(typeSubtitle, 75);
-            } else {
-                subtitleDisplay.innerHTML += "<span class='typeCursorDefault' id='typeCursor'>_</span>";
-                typingCursor();
+            function typeSubtitle() {
+                if (subtitleCounter < subtitleText.length) {
+                    subtitleDisplay.innerHTML += subtitleText.charAt(subtitleCounter);
+                    subtitleCounter++;
+                    setTimeout(typeSubtitle, 75);
+                } else {
+                    subtitleDisplay.innerHTML += "<span class='typeCursorDefault' id='typeCursor'>_</span>";
+                    typingCursor();
+                    props.setHasSeen(true);
+                }
             }
-        }
-        function typingCursor() {
-            if(document.getElementById('typeCursor')){
-                document.getElementById('typeCursor').classList.toggle("typeCursorDefault");
-                setTimeout(typingCursor, 530);
-            }
-        }
-        typeGreeting();
+            typeGreeting();
 
 
-        document.getElementsByTagName("BODY")[0].style.backgroundImage = `none`;
-        document.getElementsByTagName("BODY")[0].style.backgroundColor = 'white';
+        }
 
     }, []);
 
     const infoHover = document.getElementsByClassName('infoHover');
-
 
     return (
         <Container id='landingPage'>
             <Modal />
             <div id='overlay'></div>
             <div className='greetingContainer'>
-                <h1 id='greeting' className='outline cantTouchThis'></h1>
-                <h2 id='subtitle' className='outlineInverse cantTouchThis' style={{ height: '50px' }}></h2>
+                <h1 id='greeting' className='outline cantTouchThis'>&ensp;</h1>
+                <h2 id='subtitle' className='outlineInverse cantTouchThis' style={{ height: '50px' }}>&ensp;</h2>
             </div>
 
             <Card style={{ textAlign: 'center', padding: '10px', marginTop: '10px' }} id='skillsCard'>
